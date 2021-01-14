@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'monstserrat-black';
+  src:local('Monstserrat'), url(./fonts/Monstserrat/Montserrat-Black.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'monstserrat-semibold';
+  src:local('Monstserrat'), url(./fonts/Monstserrat/Montserrat-SemiBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'monstserrat-regular';
+  src:local('Monstserrat'), url(./fonts/Monstserrat/Montserrat-Regular.ttf) format('truetype');
+}
+:root {
+  --purple: #5E56E7;
+  --light: #F8F7FF;
+  --grey1: #F0F0F6;
+  --grey2:#A0A0A0 ;
+  --grey3:#333333; 
+} 
+
+body{
+  font-family:'monstserrat-regular';
+  font-size: 16px;
+  background-color:var(--light);
+  
+}
+h1{
+  font-family: 'monstserrat-semibold';
+  font-size: 48px;
+  color:var(--purple);
+  }
+  h2{
+    font-family: 'monstserrat-semibold';
+    font-size: 30px;
+    color:var(--purple);
+    margin-bottom: 30px
+    }
+
+  img{
+  width:30px;
+  height:30px;
+  padding:0px 5px;
+}
+.title{
+  background-image: url(./img/Pattern.svg);
+  padding:50px 100px;
+}  
+.genre{
+  padding:50px 100px;
+  min-height:300px;
+}
+.genreCard{
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 4px;
+  padding: 7px 10px;
+  height: 50px;
+  margin: 10px 0px;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+  min-width: 200px;
+}
+.book{
+  width: 114px;
+  margin-bottom:20px;
+  cursor: pointer;
+}
+.books{
+  padding:50px 100px;
+  background-color:var(--light);
+}
+.details{
+  padding:50px 100px;
+}
+.bookCard {
+  width: 114px;
+  height: 162px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+  padding: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+.bookName{
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.bookAuthor{
+  font-size: 12px;
+  color:var(--grey2)
+}
+.search{
+  padding: 0px 10px;
+  height: 40px;
+  caret-color:var(--purple);
+  border:none;
+  width:100%;
+  border-radius: 4px;
+  background-color: var(--light)
+}
+input:focus{
+  outline: none !important;
+    border:1.5px solid var(--purple);
+}
+.loader{
+  width:300px;
+  height:200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 480px) {
+  
+  .genre, .title, .details, .books{
+    padding:20px
+  }
+  
+}
