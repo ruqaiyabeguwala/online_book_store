@@ -87,4 +87,4 @@ const infiniteRef = useInfiniteScroll({
     )
 }
 
-export default withRouter(Books)
+export default Books;
