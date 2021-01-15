@@ -29,7 +29,7 @@ async function fetchUser(searchTerm=null){
     res= await axios.get(`${data.base_url}&topic=${match.params.category}${searchURL}`);
     setDetails(res.data.results)
     }
-   // console.log(res.data)
+    console.log(res.data)
     setNextPage(res.data.next)
     setLoading(false)
 }
