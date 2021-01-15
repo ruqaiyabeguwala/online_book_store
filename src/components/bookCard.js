@@ -2,14 +2,18 @@ import React from 'react'
 
 //helps in rendering a book and display the content of book on click
 export default function bookCard({book}) {
-    //concetenate author names 
+    //concatenate author names 
     function getAuthors(){
         return book.authors.reduce((total,val)=>total!==""?total+" | "+val.name:val.name,"")
     }
     //filter the book formats with given type
     function findFormat(type){
-        let formats= Object.keys(book.formats).filter((format=>format.includes(type)))
-        return formats.length?formats:null
+        let res=[];
+        for(let format of Object.keys(book.formats)){
+              if(format.includes(type) && !book.formats[format].includes(".zip") && !format.includes("zip"))
+                  res.push(format)
+        }
+        return res.length?res:null
     }
 
     //find best format and helps opening the book 

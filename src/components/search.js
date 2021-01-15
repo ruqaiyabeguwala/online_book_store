@@ -2,11 +2,11 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export default function Search({handleSearch,books}) {
-    const [typeState, setTypeState] = React.useState({name: '',
-    typing: false,
-    typingTimeout: 0})
+export default function Search({handleSearch}) {
+    // to manage the typing state
+    const [typeState, setTypeState] = React.useState({name: '',typing: false,typingTimeout: 0})
 
+    //Waits for 500 miliseconds after we finish typing and then call API.
     function handleChange(e){
         if (typeState.typingTimeout) {
             clearTimeout(typeState.typingTimeout);

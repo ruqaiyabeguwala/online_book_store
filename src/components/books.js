@@ -19,6 +19,7 @@ const [loading, setLoading] = useState(true)
 
 //sends an AJAX request to respective API and update the state accordingly
 async function fetchUser(searchTerm=null){
+    try{
     let res;
     if(!searchTerm){
     res= await axios.get(nextPage);
@@ -29,9 +30,13 @@ async function fetchUser(searchTerm=null){
     res= await axios.get(`${data.base_url}&topic=${match.params.category}${searchURL}`);
     setDetails(res.data.results)
     }
-    console.log(res.data)
+   // console.log(res.data)
     setNextPage(res.data.next)
     setLoading(false)
+}
+catch(err){
+    throw err;
+}
 }
 //for searching a particular book
  async function handleSearch(searchTerm){ 
